@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Listen on port 98 on localhost and display received text
+
+nc -l -p 98
