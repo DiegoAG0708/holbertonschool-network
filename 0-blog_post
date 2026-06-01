@@ -1,0 +1,56 @@
+0. What happens when...
+
+When you type https://www.google.com in your browser and press Enter, a series of steps happen across the web stack:
+
+1. DNS request:
+   - The browser asks the DNS system to resolve www.google.com into an IP address.
+   - The DNS resolver queries root servers, then .com servers, then Google’s authoritative DNS servers.
+   - The final IP address is returned to the browser.
+
+2. TCP/IP:
+   - The browser initiates a TCP connection to the server IP using the Transmission Control Protocol.
+   - Packets are sent over the Internet using the Internet Protocol (IP).
+   - The three-way handshake establishes a reliable connection.
+
+3. Firewall:
+   - Firewalls along the path (local, ISP, Google’s infrastructure) inspect packets.
+   - They allow legitimate traffic and block unauthorized or malicious requests.
+
+4. HTTPS/SSL:
+   - The browser and server negotiate an SSL/TLS handshake.
+   - Certificates are exchanged to verify Google’s identity.
+   - A secure channel is established, encrypting all communication.
+
+5. Load-balancer:
+   - Google’s load balancers distribute incoming requests across multiple servers.
+   - They use algorithms like round-robin or least-connections to balance traffic.
+   - This ensures scalability and reliability.
+
+6. Web server:
+   - The web server (e.g., Google’s front-end servers) receives the HTTP request.
+   - It serves static content or forwards dynamic requests to the application layer.
+
+7. Application server:
+   - The application server processes the request using Google’s codebase.
+   - It generates dynamic responses, such as search results.
+
+8. Database:
+   - If data is needed, the application queries Google’s databases.
+   - Databases store and organize information for fast retrieval.
+
+Finally, the response travels back through the stack:
+- Application server → Web server → Load balancer → Internet → Browser.
+- The browser renders the HTML, CSS, and JavaScript, displaying Google’s homepage.
+
+---
+
+Issues to consider:
+- DNS latency can slow resolution.
+- Firewalls must be properly configured to avoid blocking legitimate traffic.
+- SSL termination at load balancers must ensure internal traffic is still secure.
+- Databases must be replicated to avoid single points of failure.
+
+---
+
+Published blog post:
+[Medium/LinkedIn URL goes here after publishing]
